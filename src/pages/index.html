@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução - Sistema de Registro de Fauna</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/src/css/styleIndex.css">
+    <link rel="stylesheet" href="/src/css/carosel.css">
+</head>
+<body>
+    <div class="background">
+        <h1 class="title">Sistema de Registro de Fauna</h1>
+        
+        <div class="logo">
+            <img src="../img/logoSimbiose.jpeg" alt="Logotipo" class="logo-img">
+        </div>
+        
+        <div class="container-intro">
+            <p>Contribua para a preservação da nossa fauna! Cada registro é um passo importante para o cuidado e a proteção dos animais que fazem parte do nosso ecossistema. Junte-se a nós nessa causa e faça a diferença.</p>
+            
+            <div class="button-group">
+                <button onclick="location.href='cadastro.html'" class="button">Registrar ocorrência</button>
+            </div>
+        </div>
+    </div>    
+
+    <section>
+        <div class="swiper mySwiper container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card">
+                    <div class="img-card">
+                        <img src="../img/img1.jpg" alt="imagem-fauna">
+                    </div>
+                    <div class="desc">
+                        <p>nome do animal</p>
+                        <p>habitat</p>
+                    </div>    
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="img-card">
+                        <img src="../img/img2.jpg" alt="imagem-fauna">
+                    </div>
+                    <div class="desc">
+                        <p>nome do animal</p>
+                        <p>habitat</p>
+                    </div>    
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="img-card">
+                        <img src="../img/img3.jpg" alt="imagem-fauna">
+                    </div>
+                    <div class="desc">
+                        <p>nome do animal</p>
+                        <p>habitat</p>
+                    </div>    
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="img-card">
+                        <img src="../img/img4.jpg" alt="imagem-fauna">
+                    </div>
+                    <div class="desc">
+                        <p>nome do animal</p>
+                        <p>habitat</p>
+                    </div>    
+                </div>
+                <div class="swiper-slide card">
+                    <div class="img-card">
+                        <img src="../img/img5.jpg" alt="imagem-fauna">
+                    </div>
+                    <div class="desc">
+                        <p>nome do animal</p>
+                        <p>habitat</p>
+                    </div>    
+                </div>
+                <div class="swiper-slide card">
+                    <div class="img-card">
+                        <img src="../img/img6.jpg" alt="imagem-fauna">
+                    </div>
+                    <div class="desc">
+                        <p>nome do animal</p>
+                        <p>habitat</p>
+                    </div>    
+                </div>
+
+            </div>
+
+            <!-- Paginação do Swiper -->
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>  
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Inicializar Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 4,
+          centeredSlides: true,
+          spaceBetween: 30,
+          loop: true, 
+          grabCursor: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+    </script>
+</body>
+</html>
