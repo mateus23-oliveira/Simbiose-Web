@@ -69,10 +69,10 @@ const handleEvent = (event) => {
         sendEmail(email, protocol, usuario)
         console.log(protocol);
         
-        window.location.href = "protocolo.html";
+        document.getElementById("cadastroForm").reset()
     }
     
-
+ window.location.href = "protocolo.html";
 
 } 
 

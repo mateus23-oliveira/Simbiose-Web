@@ -1,5 +1,6 @@
+/* Estilo base do body */
 body {
-    background-image: url('./img/body.jpeg'); 
+    background-image: url('./img/body.jpeg');
     background-size: cover;
     background-position: center;
     font-family: Arial, sans-serif;
@@ -11,14 +12,15 @@ body {
     margin: 0;
 }
 
-.container {
+/* Container principal */
+#container {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 40px;
     border-radius: 8px;
     text-align: center;
-    width: 80%; /* Container ocupa 80% da largura da tela */
-    max-width: 900px; /* Limita a largura máxima para não ficar grande demais em telas grandes */
-    margin: 0 auto; /* Centraliza o container */
+    width: 40%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -27,7 +29,10 @@ h1 {
     color: #F0F0F0;
 }
 
-.input-group {
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-bottom: 20px;
     text-align: left;
 }
@@ -40,14 +45,14 @@ label {
 }
 
 input[type="text"], input[type="email"], input[type="date"], textarea {
-    width: 100%;
+    width: 80%;
     padding: 12px;
     border: none;
     border-radius: 5px;
     font-size: 1em;
 }
 
-button[type="submit"] {
+button[type="submit"], button[type="button"] {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -56,13 +61,13 @@ button[type="submit"] {
     font-weight: bold;
     font-size: 1.1em;
     cursor: pointer;
-    width: 100%;
+    width: 80%;
     margin-top: 10px;
     transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #4f9e53;
 }
 
 h5 {
@@ -79,42 +84,6 @@ h5 a:hover {
     text-decoration: underline;
 }
 
-/* Estilo para os campos de imagem */
-.input-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-#imagePreview1, #imagePreview2 {
-    width: 48%; /* Ajuste do tamanho para que as imagens fiquem ao lado uma da outra */
-    height: 200px; /* Altura do contêiner de imagem */
-    margin-top: 10px;
-    background-color: #e0e0e0;
-    object-fit: contain; /* Ajuste para que a imagem se ajuste proporcionalmente */
-    display: inline-block; /* Para colocar as imagens lado a lado */
-    border-radius: 8px; /* Bordas arredondadas para melhor estética */
-}
-
-input[type="file"] {
-    display: none; /* Esconde o input de arquivo */
-}
-
-.input-group label {
-    display: inline-block;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1em;
-    margin-top: 10px;
-    text-align: center;
-}
-
-.input-group label:hover {
-    background-color: #45a049;
-}
-
 /* Organiza as imagens lado a lado */
 .input-group.images {
     display: flex;
@@ -123,61 +92,203 @@ input[type="file"] {
 }
 
 .input-group.images > div {
-    width: 48%; /* Cada imagem ocupa quase metade da largura do container */
+    width: 48%;
 }
 
-/* Aumenta a área do formulário */
-#registrationForm {
-    display: block;
-    width: 100%;
+#imagePreview1, #imagePreview2 {
+    width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    object-fit: contain;
 }
 
-#localizacao {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    background-color: #f0f0f0;
+input[type="file"] {
+    display: none;
 }
 
-#locationBtn {
-    padding: 12px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.input-group label {
+    display: inline-block;
     cursor: pointer;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
     font-size: 1em;
     margin-top: 10px;
+    text-align: center;
 }
 
-#locationBtn:hover {
-    background-color: #45a049;
-}
-#successMessage {
-    background-color: rgba(0, 0, 0, 0.7) !important; /* Cor de fundo semitransparente */
-    color: white !important;
-    font-size: 1.2em !important;
-    padding: 20px !important;
-    border-radius: 10px !important;
-    text-align: center !important;
-    width: 80%;
-    max-width: 500px;
-    margin: 20px auto;
-    display: none !important; /* Inicialmente oculto */
+/* Container do formulário */
+#registrationFormContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
-#successMessage p {
-    margin: 10px 0 !important;
+/* Scroll dentro do formulário */
+#registrationForm {
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 90%;
+    max-height: 80vh;
+    padding: 20px;
 }
 
-#successMessage a {
+/* Responsividade */
+@media (max-width: 1024px) {
+    #registrationFormContainer {
+        width: 60%;
+    }
+
+    #container {
+        width: 70%; /* Ajustando para telas menores */
+    }
+
+    h1 {
+        font-size: 1.6em; /* Menor tamanho de título para telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    #registrationFormContainer {
+        width: 75%;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+
+    #container {
+        width: 80%;
+    }
+
+    #imagePreview1, #imagePreview2 {
+        width: 120px;
+        height: 120px;
+    }
+
+    input[type="text"], input[type="email"], input[type="date"], textarea {
+        width: 90%; /* Ajuste nos campos de entrada para melhor uso de espaço */
+    }
+
+     #historico {
+        margin-left: 0;
+        margin-top: 20px; /* Move o histórico para baixo */
+    }
+}
+
+@media (max-width: 480px) {
+    #registrationFormContainer {
+        width: 100%;
+    }
+
+    #container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    button[type="submit"] {
+        font-size: 1em;
+        padding: 10px 16px;
+    }
+
+    .input {
+        gap: 8px;
+    }
+
+    label {
+        font-size: 0.9em;
+    }
+
+    #imagePreview1, #imagePreview2 {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Estilização da sidebar */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+#sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+#sidebar ul li span {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+#sidebar ul li strong {
     color: #4CAF50;
-    text-decoration: none;
 }
 
-#successMessage a:hover {
-    text-decoration: underline;
+#historico {
+    margin-left: 270px;
+    padding: 20px;
 }
 
+/* Estilização da mensagem de agradecimento */
+#containerMensagem {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    width: 40%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Botão para registrar nova ocorrência */
+#registerNew {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#registerNew:hover {
+    background-color: #4f9e53;
+}

@@ -1,5 +1,5 @@
 body {
-    background-image: url('../img/body.jpeg'); 
+    background-image: url('./img/body.jpeg'); 
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -73,7 +73,7 @@ body {
 .carousel-container {
     position: relative;
     width: 100%;
-    max-width: 900px; /* Define uma largura máxima para o carrossel */
+    max-width: 900px; 
     margin: auto;
     overflow: hidden;
     display: flex;
@@ -83,11 +83,11 @@ body {
 .carousel-slides {
     display: flex;
     transition: transform 0.5s ease;
-    width: 300%; /* Permite rolar múltiplas imagens de uma vez */
+    width: 300%;
 }
 
 .carousel-slide {
-    min-width: 33.33%; /* Três imagens por tela */
+    min-width: 33.33%; 
     box-sizing: border-box;
     padding: 10px;
 }

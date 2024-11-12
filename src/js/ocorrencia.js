@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     const acceptTermsCheckbox = document.getElementById("acceptTerms");
     const continueButton = document.getElementById("continueButton");
-    const termsContainer = document.getElementById("termsContainer");
-    const registrationForm = document.getElementById("registrationForm");
+    const termsContainer = document.getElementById("container");
+    const containerHistory = document.getElementById("historico");
+    const registrationForm = document.getElementById("registrationFormContainer");
     const successMessage = document.getElementById("successMessage");
 
     const imagem1Input = document.getElementById('imagem1');
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (acceptTermsCheckbox.checked) {
             // Esconde a div dos termos e mostra o formulário de registro
             termsContainer.style.display = "none";
+            containerHistory.style.display = "block"
             registrationForm.style.display = "block";
         } else {
             alert("Por favor, aceite os termos e condições para continuar.");
@@ -37,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const reader = new FileReader();
 
         reader.onload = function(e) {
-            previewElement.style.backgroundImage = `url(${e.target.result})`;
+            previewElement.src = e.target.result;
             previewElement.style.display = 'block'; // Exibe a imagem
         };
 
@@ -78,25 +80,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Ação ao submeter o formulário de registro
     document.getElementById("registrationForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        
-        // Aqui você pode adicionar a lógica de envio de dados, como a chamada ao EmailJS ou outro serviço
+        event.preventDefault();  // Impede o envio do formulário
 
-        // Esconde o formulário e exibe a mensagem de sucesso
-        registrationForm.style.display = "none";
         
-        // Criando a mensagem de sucesso dinamicamente
-        const successMessageDiv = document.createElement('div');
-        successMessageDiv.id = 'successMessage';
-        successMessageDiv.innerHTML = `
-            <p>Parabéns, você finalizou o registro da ocorrência!</p>
-            <p>Confira os detalhes dessa ocorrência no seu email.</p>
-        `;
-        
-        // Adiciona a mensagem de sucesso ao corpo da página
-        document.body.appendChild(successMessageDiv);
-        
+        // Esconde o formulário de registro
+        document.getElementById("registrationFormContainer").style.display = "none";
+
         // Exibe a mensagem de sucesso
-        
+        document.getElementById("containerMensagem").style.display = "block";
     });
 });
