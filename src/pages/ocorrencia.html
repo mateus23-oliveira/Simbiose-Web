@@ -6,9 +6,14 @@
     <title>Termos e Condições - Sistema de Registro de Fauna</title>
     <link rel="stylesheet" href="../css/ocorrencia.css">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+
     <!-- Script externo -->
     <script src="../js/ocorrencia.js" defer></script>
     <script src="../js/historicoLocal.js" defer></script>
+    <script src="../js/mapa.js" defer></script>
 </head>
 <body>
     <div id="historico" style="display: none;">
@@ -35,7 +40,6 @@
         </div>
     </div>
     <div id="registrationFormContainer" style="display: none;">
-        <!-- Formulário de Registro (inicialmente oculto) -->
         <div id="registrationForm">
             <h1>Formulário de Registro</h1>
             <form action="#" method="post" id="form">
@@ -67,6 +71,11 @@
                     <label for="localizacao">Localização:</label>
                     <input type="text" id="localizacao" name="localizacao" readonly>
                     <button type="button" id="getLocationBtn">Obter Localização</button>
+                </div>
+
+                <div class="input">
+                    <label for="map">Escolha a Localização no Mapa:</label>
+                    <div id="map" style="height: 300px;"></div>
                 </div>
 
                 <div class="input">
